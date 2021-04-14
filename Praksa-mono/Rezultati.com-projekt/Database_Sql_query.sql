@@ -1,0 +1,534 @@
+CREATE TABLE AppUser (
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	FirstName VARCHAR(35) NOT NULL,
+	LastName VARCHAR(35) NOT NULL,
+	Email VARCHAR(70) NOT NULL UNIQUE,
+	UserName VARCHAR(70) NOT NULL UNIQUE,
+	Salt VARCHAR(50) NULL,
+	PasswordHash VARCHAR(50) NULL,
+	IsAdmin BIT NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+);
+
+INSERT INTO AppUser(FirstName, LastName, Email, UserName, IsAdmin, CreatedAt, UpdatedAt)
+VALUES ('Josip', 'Pavic', 'Josip.Pavic@gmail.com', 'Joza', 0, SYSDATETIME(), SYSDATETIME());
+
+INSERT INTO AppUser(UserInfoID, FirstName, LastName, Email, UserName, Salt, PasswordHash)
+VALUES ();
+
+SELECT * FROM AppUser;
+
+--------------------------------------------------------------------------
+
+CREATE TABLE Person (
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	FirstName VARCHAR(30) NOT NULL,
+	LastName VARCHAR(30) NOT NULL,
+	DateOfBirth DATE NOT NULL,
+	Country VARCHAR(30) NOT NULL,
+);
+
+---------------------------------------------------------------------------
+
+CREATE TABLE Referee (
+	Id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Person(Id) PRIMARY KEY,
+	Rating INTEGER,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id)
+	);
+
+
+INSERT INTO Referee(Id, Rating, CreatedAt, UpdatedAt, IsDeleted, ByUser)
+VALUES ('B91C3A28-2C71-EB11-BA77-283A4D0E8EE4', 5, SYSDATETIME(), SYSDATETIME(), 0, '83CC21AD-6E70-EB11-BA77-283A4D0E8EE4');
+
+SELECT * FROM Referee;
+
+---------------------------------------------------------------------------
+
+CREATE TABLE Coach (
+	Id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Person(Id) PRIMARY KEY,
+	CoachType VARCHAR(40) NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id)
+);
+
+
+INSERT INTO Coach(Id, CoachType, CreatedAt, UpdatedAt, IsDeleted, ByUser)
+VALUES ('B91C3A28-2C71-EB11-BA77-283A4D0E8EE4', 'Head coach', SYSDATETIME(), SYSDATETIME(), 0, '83CC21AD-6E70-EB11-BA77-283A4D0E8EE4');
+
+SELECT * FROM Coach;
+
+---------------------------------------------------------------------------------------
+
+CREATE TABLE Player (
+	Id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Person(Id) PRIMARY KEY,
+	PlayerValue INTEGER,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL ,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT NOT NULL DEFAULT 0,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id)
+);
+
+
+INSERT INTO Player(Id, PlayerValue, CreatedAt, UpdatedAt, IsDeleted, ByUser)
+VALUES ('B91C3A28-2C71-EB11-BA77-283A4D0E8EE4', 100000, SYSDATETIME(), SYSDATETIME(), 0, '83CC21AD-6E70-EB11-BA77-283A4D0E8EE4');
+
+SELECT * FROM Player;
+
+----------------------------------------------------------------------------
+
+CREATE TABLE Stadium(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	Name VARCHAR(40) NOT NULL,
+	StadiumAddress VARCHAR(90) NOT NULL UNIQUE,
+	Capacity INTEGER NOT NULL,
+	YearOfConstruction DATE NOT NULL,
+	Description TEXT,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+);
+
+
+INSERT INTO Stadium(Name, StadiumAddress, Capacity, YearOfConstruction, Description, ByUser)
+VALUES ('SDLFKJ', 'Vladimira Nazora 123', 2234334, CAST('01/03/1995' AS DATE), 'Ovaj stadion bla bla bla..', '00C798AC-A873-EB11-B8FC-F8B46AB9A8F2'); 
+
+INSERT INTO Stadium(Id, Name, StadiumAddress, Capacity, YearOfConstruction, Description, CreatedAt, UpdatedAt, ByUser)
+VALUES ('20900A95-156D-EB11-B8F8-F8B56AB9A8F7', 'Pampas', 'Josipa Benkovca 23', 2234334, CAST('01/03/2020' AS DATE), 'bla bla bla bla bla blab', SYSDATETIME(), SYSDATETIME(), '00C798AC-A873-EB11-B8FC-F8B46AB9A8F2'); 
+
+SELECT * FROM Stadium;
+
+--------------------------------------------------------------------------------
+
+CREATE TABLE Club(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	StadiumID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Stadium(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	Name VARCHAR(40) NOT NULL,
+	ClubAddress VARCHAR(90) NOT NULL UNIQUE,
+	ShortName VARCHAR(20) NOT NULL,
+	YearOfFoundation DATE NOT NULL,
+	Description TEXT,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id)
+);
+
+
+INSERT INTO Club(StadiumID, Name, ClubAddress, ShortName, YearOfFoundation, Description)
+VALUES ('55BE69E9-A873-EB11-B8FC-F8B46AB9A8F2', 'Dinamo', 'LSDFKJSDJKF', 'Din', CAST('07/09/1945' AS DATE), 'BLA BLA');
+
+INSERT INTO Club(Id, StadiumID, Name, ClubAddress, ShortName, YearOfFoundation, Description)
+VALUES ('328CCE95-166D-EB11-B8F8-F8B46AB9A8F3', 'ECB21ACF-0A6F-EB11-B8F8-F8B46AB9A8F2', 'Lokomotiva', 'SDLJFSDJKF', 'Lok', CAST('07/09/1945' AS DATE), 'bla bla');
+
+SELECT * FROM Club;
+
+---------------------------------------------------------------------------
+
+CREATE TABLE Position(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	Name VARCHAR(20) UNIQUE,
+	ShortName VARCHAR(10),
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT Position_uq UNIQUE(Id, Name)
+);
+
+
+INSERT INTO Position(Name, ShortName)
+VALUES('Napadac', 'bla');
+
+INSERT INTO Position(Id, Name, ShortName)
+VALUES('DEDA449D-1B6D-EB11-B8F8-F8B46AB9A8F2', 'Obrambeni', 'bla');
+
+SELECT * FROM Position;
+
+-------------------------------------------------------------------------
+
+CREATE TABLE Season(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	Name VARCHAR(40) NOT NULL,
+	Period VARCHAR(20) NOT NULL,
+	YearOfStart DATE,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT Season_uq UNIQUE(Period, YearOfStart)
+);
+
+
+INSERT INTO Season(Name, Period, YearOfStart)
+VALUES('DEDA949D-1B6D-EB11-B8F8-F8B46AB9A4F1', 'ljetni', CAST('' AS DATE));
+
+INSERT INTO Season(Id, Name, Period, YearOfStart)
+VALUES('DEDA849D-1B6D-EB11-B8F8-F8B46AB9A8F2', '', '', CAST('' AS DATE));
+
+SELECT * FROM Season;
+
+-----------------------------------------------------------------------
+
+CREATE TABLE League(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	Name VARCHAR(60) NOT NULL UNIQUE,
+	ShortName VARCHAR(20) NOT NULL,
+	Rank INTEGER NOT NULL,
+	Country VARCHAR(35),
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id)
+);
+
+
+INSERT INTO League(Name, ShortName, Rank, Country)
+VALUES ();
+
+INSERT INTO League(Id, Name, ShortName, Rank, Country)
+VALUES ();
+
+SELECT * FROM League;
+
+-------------------------------------------------------------------------------
+
+CREATE TABLE LeagueSeason(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	LeagueID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES League(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	SeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Season(Id),
+	Category VARCHAR(40),
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT LeagueSeason_uq UNIQUE(LeagueID, SeasonID)
+);
+
+
+INSERT INTO LeagueSeason(LeagueID, SeasonID)
+VALUES ();
+
+INSERT INTO LeagueSeason(Id, LeagueID, SeasonID)
+VALUES ();
+
+SELECT * FROM LeagueSeason;
+
+------------------------------------------------------------------------------
+
+CREATE TABLE TeamSeason(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	ClubID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Club(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	CoachID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Coach(Id),
+	LeagueSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES LeagueSeason(Id),
+	Category VARCHAR(30) NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT TeamSeason_uq UNIQUE(LeagueSeasonID, ClubID, CoachID)
+);
+
+
+INSERT INTO TeamSeason(ClubID, CoachID, Category)
+VALUES ('DEDA449D-1B5D-EB11-B8F8-F8B46AB9A8F2', '', '');
+
+INSERT INTO TeamSeason(Id, ClubID, CoachID, Category)
+VALUES('DEDA449D-1B6D-EB21-B8F8-F8B46AB9A8F2', '', '', '');
+
+SELECT * FROM TeamSeason;
+
+---------------------------------------------------------------------------
+
+CREATE TABLE TeamRegistration(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	TeamSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TeamSeason(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PlayerID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Player(Id),
+	PositionID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Position(Id),
+	JerseyNumber INTEGER,
+	IsActive BIT NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT TeamRegistration_uq UNIQUE(TeamSeasonID, PlayerID, PositionID)
+);
+
+
+INSERT INTO TeamRegistration(TeamSeasonID, PlayerID, PostionID, JerseyNumber)
+VALUES ();
+
+INSERT INTO TeamRegistration(Id, TeamSeasonID, PlayerID, PostionID, JerseyNumber)
+VALUES ();
+
+SELECT * FROM TeamRegistration;
+
+------------------------------------------------------------------------------
+
+CREATE TABLE Standing(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	LeagueSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES LeagueSeason(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	ClubID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Club(Id),
+	Played INTEGER NOT NULL,
+	Won INTEGER NOT NULL,
+	Draw INTEGER NOT NULL,
+	Lost INTEGER NOT NULL,
+	GoalsScored INTEGER NOT NULL,
+	GoalsConceded INTEGER NOT NULL,
+	Points INTEGER NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT Table_uq UNIQUE(LeagueSeasonID, ClubID)
+);
+
+
+INSERT INTO Standing(LeagueSeasonID, ClubID, Played, Won, Draw, Lost, GoalsScored, GoalsConceded)
+VALUES ();
+
+INSERT INTO Standing(Id, LeagueSeasonID, ClubID, Played, Won, Draw, Lost, GoalsScored, GoalsConceded)
+VALUES ();
+
+SELECT * FROM Standing;
+
+------------------------------------------------------------------------------
+
+CREATE TABLE Match(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	HomeTeamSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TeamSeason(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	AwayTeamSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TeamSeason(Id),
+	LeagueSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES LeagueSeason(Id),
+	RefereeID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Referee(Id),
+	MatchDate INTEGER NOT NULL,
+	MatchDay DATE NOT NULL,
+	IsPlayed BIT NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT Match_uq UNIQUE(HomeTeamSeasonID, AwayTeamSeasonID, LeagueSeasonID)
+);
+
+
+INSERT INTO Match(HomeTeamID, AwayTeamID, LeagueSeasonID, RefereeID,MatchDate, MatchDay)
+VALUES ();
+
+INSERT INTO Match(MatchID, HomeTeamID, AwayTeamID, LeagueSeasonID, RefereeID,MatchDate, MatchDay)
+VALUES ();
+
+SELECT * FROM Match;
+
+------------------------------------------------------------------------------
+
+CREATE TABLE SquadRegistration(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	TeamSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TeamSeason(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	TeamRegistrationID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TeamRegistration(Id),
+	MatchID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Match(Id),
+	Substitute BIT NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT SquadRegistration_uq UNIQUE(TeamSeasonID, TeamRegistrationID, MatchID)
+);
+
+
+------------------------------------------------------------------------------
+
+CREATE TABLE Score(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	MatchID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Match(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PlayerID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Player(Id),
+	MatchMinute INTEGER NOT NULL,
+	Autogoal BIT NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT Score_uq UNIQUE(MatchID, PlayerID)
+);
+
+
+INSERT INTO Score(MatchID, PlayerID, MatchMinute, Autogoal)
+VALUES();
+
+INSERT INTO Score(ScoreID, MatchID, PlayerID, MatchMinute, Autogoal)
+VALUES();
+
+SELECT * FROM Score;
+
+----------------------------------------------------------------------------
+
+CREATE TABLE MatchStatistics(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	TeamSeasonID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES TeamSeason(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	MatchID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Match(Id),
+	Home BIT NOT NULL,
+	Goals INTEGER NOT NULL,
+	YellowCards INTEGER NOT NULL,
+	RedCards INTEGER NOT NULL,
+	Shots INTEGER NOT NULL,
+	ShotsOnTarget INTEGER NOT NULL,
+	Possession INTEGER NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT MatchStatistics_uq UNIQUE(TeamSeasonID, MatchID)
+);
+
+
+INSERT INTO MatchStatistics(TeamSeasonID, ClubID, MatchID, Home, Goals, YellowCards, RedCards, Shots, ShotsOnTarget, Possession)
+VALUES ();
+
+INSERT INTO MatchStatistics(MatchStatisticsID, TeamSeasonID, ClubID, MatchID, Home, Goals, YellowCards, RedCards, Shots, ShotsOnTarget, Possession)
+VALUES ();
+
+SELECT * FROM MatchStatistics;
+
+----------------------------------------------------------------------------
+
+CREATE TABLE CardDeserved(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	MatchID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Match(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PlayerID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Player(Id),
+	YellowCard BIT NOT NULL,
+	RedCard BIT NOT NULL,
+	MatchMinute INTEGER NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+);
+
+
+INSERT INTO CardDeserved(MatchID, PlayerID, YellowCard, RedCard, MatchMinute)
+VALUES ();
+
+INSERT INTO CardDeserved(CardDeservedID, MatchID, PlayerID, YellowCard, RedCard, MatchMinute)
+VALUES ();
+
+SELECT * FROM CardDeserved;
+
+-----------------------------------------------------------------------------
+
+CREATE TABLE Substitution(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	MatchID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Match(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PlayerInID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Player(Id),
+	PlayerOutID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Player(Id),
+	MatchMinute INTEGER NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT Substitution_uq UNIQUE(MatchID, PlayerInID, PlayerOutID)
+);
+
+
+INSERT INTO Substitution(MatchID, PlayerInID, PlayerOutID, MatchMinute)
+VALUES ();
+
+INSERT INTO Substitution(SubstitutionID, MatchID, PlayerInID, PlayerOutID, MatchMinute)
+VALUES ();
+
+SELECT * FROM Substitution;
+
+---------------------------------------------------------------------------
+
+CREATE TABLE Post(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	AppUserID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	Title TEXT NOT NULL,
+	Body TEXT NOT NULL,
+	Date DATE NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+);
+
+
+INSERT INTO Post(UserInfoID, Title, Body, Date)
+VALUES ();
+
+INSERT INTO Post(PostID, UserInfoID, Title, Body, Date)
+VALUES ();
+
+SELECT * FROM Post;
+
+----------------------------------------------------------------------------
+
+CREATE TABLE Comment(
+	Id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
+	AppUserID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	Body TEXT NOT NULL,
+	Date DATE NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id)
+);
+
+
+INSERT INTO Comment(UserInfoID, Body, Date)
+VALUES ();
+
+INSERT INTO Comment(CommentID, UserInfoID, Body, Date)
+VALUES ();
+
+SELECT * FROM Comment;
+
+-----------------------------------------------------------------------------
+
+CREATE TABLE PostComment(
+	Id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Comment(Id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PostID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Post(Id),
+	Date DATE NOT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	UpdatedAt DATETIME DEFAULT GETDATE() NOT NULL,
+	IsDeleted BIT DEFAULT 0 NOT NULL,
+	ByUser UNIQUEIDENTIFIER FOREIGN KEY REFERENCES AppUser(Id),
+	CONSTRAINT PostComment_uq UNIQUE(Id, PostID)
+);
+
+
+INSERT INTO PostComment(CommentID, PostID, Date)
+VALUES ();
+
+SELECT * FROM PostComment;
+
+-----------------------------------------------------------------------------------
+
+DROP TABLE PostComment;
+DROP TABLE Post;
+DROP TABLE Comment;
+DROP TABLE Substitution;
+DROP TABLE CardDeserved;
+DROP TABLE MatchStatistics;
+DROP TABLE Score;
+DROP TABLE SquadRegistration;
+DROP TABLE Match;
+DROP TABLE Standing;
+DROP TABLE TeamRegistration;
+DROP TABLE TeamSeason;
+DROP TABLE LeagueSeason;
+DROP TABLE Club;
+DROP TABLE Stadium;
+DROP TABLE Referee;
+DROP TABLE Coach;
+DROP TABLE dbo.Player;
+DROP TABLE Person;
+DROP TABLE Position;
+DROP TABLE Season;
+DROP TABLE League;
+DROP TABLE AppUser;
