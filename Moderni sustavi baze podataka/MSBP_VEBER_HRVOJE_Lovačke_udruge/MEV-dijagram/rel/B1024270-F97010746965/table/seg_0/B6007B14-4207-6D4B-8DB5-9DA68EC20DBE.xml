@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B6007B14-4207-6D4B-8DB5-9DA68EC20DBE" name="divljac">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>4EE42411-E903-6E9A-901C-3B57297B3758</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="divljac_id" id="7639005B-A48E-658F-0D2A-A07A55E63997">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>F826BE53-D858-1A7B-20F6-46F9F746FECB</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="naziv" id="562515F1-F45E-D64B-25D3-871638C1B88C">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>E254C543-D8BA-D827-E0B8-6FB5CE19CD5A</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vrsta" id="A0C7B664-4587-CD74-EFCB-510FB73C0764">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>8E85C3F1-DA1F-7CF3-BAB7-6FBF92799955</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="spol" id="0F2B13A6-605D-58EF-7855-074881BC721B">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>1FBBC728-9DE9-907A-15A5-BCD6C61EF744</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pocetak_lovidbe" id="7BFEFCBB-CCA8-7BF7-CCE5-416A5148167E">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>06B4304A-ABE3-E058-955F-E43C365DB43E</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zavrsetak_lovidbe" id="3327C09B-0064-FE0B-EF2A-4D2EAC013331">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>A5325F3D-1FE2-6F60-3496-A695E4E16760</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F0BDE50-3CDD-6B37-52F0-1AC403C01E40" name="divljac_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>F9107F87-EA5F-688D-8E9F-E473B3583FB7</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7639005B-A48E-658F-0D2A-A07A55E63997"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39981306-EF15-5CDD-0E96-A85173F651E9" name="divljac_naziv_vrsta_spol_UN">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>7E4ED926-6E63-8A99-047B-A0E0AACCE612</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="562515F1-F45E-D64B-25D3-871638C1B88C"/>
+<colUsage columnID="A0C7B664-4587-CD74-EFCB-510FB73C0764"/>
+<colUsage columnID="0F2B13A6-605D-58EF-7855-074881BC721B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

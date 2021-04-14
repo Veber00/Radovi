@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B767D332-E699-9FA9-D8C9-6C69C4D1CA3B" name="zemlja_kultura">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>1AC305D7-45E1-AA88-8A9C-CEBC358F2533</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="zemlja_kultura_id" id="FFF4B23B-CBA3-E970-222A-455E57FE7695">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>5B1B8EB2-7E34-73E1-D517-13796B6DCA74</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="kultura" id="4FACEBA0-BE64-159F-DFAE-A06EEDC5BC69">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>884453E2-CA3C-8813-2F80-0F7BE4BAB4C3</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datume_sjetve" id="DAD496BE-BF18-FCA2-481A-4964B4A73302">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>2EF0B76F-A559-C729-BF67-65FA73BF9556</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum_berbe" id="0F78086E-5B1C-C5CD-E9C2-DF782F5C4E94">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>EE508E16-AC7F-664F-68FB-06DA2C36E5E3</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="obradiva_povrsina_obradiva_povrsina_id" id="123C9869-62C1-422C-5A66-B01DD2FC2409">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>A5F140B1-98DD-397F-C2B9-46F4B3895C82</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E63ABB4C-F194-CCB4-EFD7-6FE879BF1EFF" referredColumn="01F2A37E-B77E-779D-983B-4E9B466736C6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B31A6545-783D-71C4-15AE-2BBC3FD260F1" name="zemlja_kultura_PKv1">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>793E68E1-2240-EC42-77A4-638649BC505B</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DAD496BE-BF18-FCA2-481A-4964B4A73302"/>
+<colUsage columnID="123C9869-62C1-422C-5A66-B01DD2FC2409"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F6B016E3-71AA-A87A-D3F7-5FD4FCF20C8A" name="zemlja_kultura_obradiva_povrsina_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>6F21BE0C-9D27-87A6-82A5-ABFB7390183B</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="123C9869-62C1-422C-5A66-B01DD2FC2409"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

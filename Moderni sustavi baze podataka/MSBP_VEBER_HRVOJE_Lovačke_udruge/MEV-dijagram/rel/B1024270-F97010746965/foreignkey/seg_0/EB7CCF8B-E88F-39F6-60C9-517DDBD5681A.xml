@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EB7CCF8B-E88F-39F6-60C9-517DDBD5681A" containerWithKeyObject="E3F63339-73CA-8A66-C7B5-2228248FB6CA" localFKIndex="4D4E1C7A-28B3-A429-9522-67D63437AE8B" name="lov_skupni_lov_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>35A9CE5A-263A-3EDB-4A92-28C2531B840C</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<referredTableLongName>skupni_lov</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5D79FE5A-3A75-20E4-2143-748845A05487</referredTableID>
+<keyObject>52DAAD0F-C2E3-129E-D9E5-DEB8C7DB6A5A</keyObject>
+<referredKeyID>52DAAD0F-C2E3-129E-D9E5-DEB8C7DB6A5A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>skupni_lov_id,lovacka_udruga_lovacka_udruga_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

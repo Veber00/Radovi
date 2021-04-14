@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E3F63339-73CA-8A66-C7B5-2228248FB6CA" name="lov">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>96BD4D38-2494-BDED-0C0B-F3E841260AAB</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="skupni_lov_skupni_lov_id" id="454568DC-5E37-877E-9025-623A741EC8FD">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>BA4FB279-7A10-D829-2E27-1F2188BAE3DF</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EB7CCF8B-E88F-39F6-60C9-517DDBD5681A" referredColumn="FFCED1A6-5C3D-DE39-B337-B3202DF96C9A"/>
+</associations>
+</Column>
+<Column name="clan_oib" id="687FDEC7-5B97-C79F-1482-ED6CE10FD52A">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>29CE8253-A9D7-4072-3F87-82B19FABC973</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4141CDB9-EE19-CBEC-A00E-C9474BE37E28" referredColumn="5163C7CA-A775-950B-3A87-F89FF557A51B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="75CC2704-D90D-7BC1-666F-1DCAE6B685A4" name="lov_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>320C26BF-01B0-D622-BE53-0AF47AC4E566</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="454568DC-5E37-877E-9025-623A741EC8FD"/>
+<colUsage columnID="687FDEC7-5B97-C79F-1482-ED6CE10FD52A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D09B8E80-067F-4464-3B48-874EF455B639" name="lov_clan_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>AFEF3B8F-6084-1D0B-0131-A1B786434448</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="687FDEC7-5B97-C79F-1482-ED6CE10FD52A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4D4E1C7A-28B3-A429-9522-67D63437AE8B" name="lov_skupni_lov_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>35A9CE5A-263A-3EDB-4A92-28C2531B840C</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="454568DC-5E37-877E-9025-623A741EC8FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

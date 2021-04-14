@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7F45A479-9FE1-47AA-AE34-0F56F87A0A8A" name="clan">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:37:32 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="oib" id="908F527A-2A29-C489-F4F7-3FD5F8B30C2C">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:43:25 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ime" id="7280781E-D18C-F9C0-B9AB-6A7B385227EA">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:37:58 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prezime" id="A1713A8D-50DC-19EF-B845-22C2466B96D9">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:42:24 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spol" id="9248FA7D-47F7-FFFE-DF7F-AB024867E6C4">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:42:40 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status" id="9CB8C814-DD93-C05D-4E60-82A856A18272">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 07:34:04 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum_rodenja" id="B7E44D98-6267-310A-820F-F8353437FAE7">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 17:22:55 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mjesto_rodenja" id="4FC95648-92F1-8D42-E4B2-648369A5BAE7">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 17:23:11 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="adresa" id="6DE73D60-ACF6-B0A4-53BF-59D06A2AF389">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 07:00:34 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>35</dataTypeSize>
+<ownDataTypeParameters>35,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mjesto" id="7A0D51FD-D0DB-B2B9-8EF4-9CC188F1E283">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-10 20:18:03 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefon" id="9C381AFD-6177-F251-A5DE-B1393F40C20E">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 07:01:12 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="47988F6E-08AC-E78D-357A-9F866C62A5EE" name="Član PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 19:13:47 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>908F527A-2A29-C489-F4F7-3FD5F8B30C2C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

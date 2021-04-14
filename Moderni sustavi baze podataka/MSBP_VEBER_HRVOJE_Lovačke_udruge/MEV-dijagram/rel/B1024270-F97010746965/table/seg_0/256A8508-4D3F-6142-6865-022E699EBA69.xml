@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="256A8508-4D3F-6142-6865-022E699EBA69" name="mjesecna_dozvola">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>A88F4D90-3E05-B7D2-30E6-DD434CEDB0A5</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="dozvola_id" id="AE14A388-6AD5-383A-EE78-E9D0E14F4504">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>11908ACC-356A-B217-8225-04BAA2D88144</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mjesec" id="8B5CA7DA-CDD0-5CC1-9AC1-DA0A254CDEE9">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>2E34A117-2D5A-8E33-4C78-2BC772AC1AF7</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="clan_oib" id="2F9E5006-D20D-0CCD-33C1-4E55462C3F11">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>D84E14F1-592C-E27F-EEDE-8276C43BE0D5</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="88F4426C-8814-68E5-2E86-937E26AC985A" referredColumn="5163C7CA-A775-950B-3A87-F89FF557A51B"/>
+</associations>
+</Column>
+<Column name="godina" id="A0DAB51B-DE36-C4A2-79EA-5F7AD71C189E">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>C13182CC-232F-2B7C-4C63-F6380EF55EB5</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lovacka_udruga_lovacka_udruga_id" id="50526D8D-6C43-B679-AA7D-3D0B03960623">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>6AE9FD24-89AD-B269-5D14-F9E71D683309</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D8823A2-71B4-2CC7-2882-E5437FF81737" referredColumn="D10D198F-2AAC-4388-3B8B-24E80FD6F75A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48DD90A5-2B1D-0EFD-2C38-04E7ED7817F1" name="mjesecna_dozvola_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>E8101A35-6244-51C1-8149-9E768A86EE80</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE14A388-6AD5-383A-EE78-E9D0E14F4504"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FCD1B13D-2C3D-0437-CF02-C95AC6409491" name="mjesecna_dozvola_lovacka_udruga_lovacka_udruga_id_clan_oib_godina_mjesec_UN">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>4C143C1E-F20D-0070-F0C1-B09BA93E1DBB</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50526D8D-6C43-B679-AA7D-3D0B03960623"/>
+<colUsage columnID="2F9E5006-D20D-0CCD-33C1-4E55462C3F11"/>
+<colUsage columnID="A0DAB51B-DE36-C4A2-79EA-5F7AD71C189E"/>
+<colUsage columnID="8B5CA7DA-CDD0-5CC1-9AC1-DA0A254CDEE9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5873CF8B-0989-BFF3-0AD5-29D21B5146CF" name="mjesecna_dozvola_clan_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>F0F7111C-55DA-4D3F-F3AB-8E25C89E6B42</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F9E5006-D20D-0CCD-33C1-4E55462C3F11"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2F9BA8E-3F85-DE43-BC32-0C3E97AA2C0A" name="mjesecna_dozvola_lovacka_udruga_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>D45714AB-9053-A80E-4088-F2F1C602C235</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50526D8D-6C43-B679-AA7D-3D0B03960623"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

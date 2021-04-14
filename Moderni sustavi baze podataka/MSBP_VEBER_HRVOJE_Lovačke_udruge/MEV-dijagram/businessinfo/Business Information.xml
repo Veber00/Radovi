@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="0DC587F8-4579-0AEF-DE4A-3F090B19DD9D">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:31:20 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

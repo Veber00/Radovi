@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4C6D2D62-9CF6-4095-15A2-FBF51F9FC2C2" name="dozvoljena_divljac_pojedinacni">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>CF97234A-D527-C4AA-7514-6B8126D0069F</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="dopusten_broj_odstrijela" id="B8F627D9-CB39-68A5-C68F-32238B9D4AF7">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>A11E65C3-21F8-E874-EA87-F238BAB3EF10</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ostvareni_broj_odstrijela" id="3D977D23-E441-A503-30A1-57A500DFB38E">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>C1382487-8D62-F31B-5506-A164CE6F5A1B</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mjesecna_dozvola_dozvola_id" id="330E2142-73E3-3146-9442-81A1C586B7C0">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>770B23FE-A81A-648E-9DA5-34BCBF496CC0</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="306CAD7A-4731-432B-E0E8-CE37DEB4729E" referredColumn="AE14A388-6AD5-383A-EE78-E9D0E14F4504"/>
+</associations>
+</Column>
+<Column name="divljac_divljac_id" id="90B9881D-2C3B-8799-057A-30AAA011EBD0">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>3F1EBA85-DF8C-D5CE-F050-B830DEBF3EC2</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28167106-BDD9-2376-50E1-C12136E7809F" referredColumn="7639005B-A48E-658F-0D2A-A07A55E63997"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C95483E3-47A8-3C1F-B8E8-FD77BA57F9E0" name="dozvoljena_divljac_pojedinacni_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>8C97CDDD-97C5-99A0-153D-E8ACFAEC79CD</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90B9881D-2C3B-8799-057A-30AAA011EBD0"/>
+<colUsage columnID="330E2142-73E3-3146-9442-81A1C586B7C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="201B2ECE-709B-4FB7-A148-E2CA385BD2E6" name="dozvoljena_divljac_pojedinacni_mjesecna_dozvola_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>A7A5E52C-0926-99E3-0C19-031EBE04881E</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="330E2142-73E3-3146-9442-81A1C586B7C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BDF1DB75-3CA2-16FD-B136-9C793599C1CA" name="dozvoljena_divljac_pojedinacni_divljac_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>ADE1142E-D9C2-8510-742A-AC57B728D58C</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90B9881D-2C3B-8799-057A-30AAA011EBD0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

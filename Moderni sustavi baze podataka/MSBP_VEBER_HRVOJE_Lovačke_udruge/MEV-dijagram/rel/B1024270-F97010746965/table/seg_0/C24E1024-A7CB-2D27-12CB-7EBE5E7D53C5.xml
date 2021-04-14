@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C24E1024-A7CB-2D27-12CB-7EBE5E7D53C5" name="obradiva_povrsina">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>9D38BF77-0810-D204-843C-8B97F224D0B1</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="obradiva_povrsina_id" id="01F2A37E-B77E-779D-983B-4E9B466736C6">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>7B8186F6-1198-BE12-B517-1B6D714C15B4</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="katastarska_opcina" id="C139B546-FE45-304C-F091-5C19354D5AFE">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>46D0D775-21C8-1446-8408-B8C32B94EB5F</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="broj_katastarske_cestice" id="71FE238E-4CF6-3468-2DDE-0741FBAF4546">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>265FA438-37F0-B7C3-6E48-9E4B82EF4D8A</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="povrsina" id="51B49444-CDD0-5D9B-E55C-62EE3A683A6B">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>5760CF68-C393-0EBA-C2F5-372E309355F4</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lovacka_udruga_lovacka_udruga_id" id="F671AA76-F95D-9FA8-0827-4DBCE46BBA1A">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>3E58802F-EA01-A8C5-92F0-F1605EEB88ED</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB60E8FE-CBD5-BD75-233C-793DEB18B07C" referredColumn="D10D198F-2AAC-4388-3B8B-24E80FD6F75A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F0309CD-6F1A-C2BB-9D44-82D5C670E9E6" name="obradiva_povrsina_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>16647508-9D79-814C-A641-95F5A27D8C4F</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01F2A37E-B77E-779D-983B-4E9B466736C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77FA1555-1175-4505-5851-571C2D129D65" name="obradiva_povrsina_katastarska_opcina_broj_katastarske_cestice_UN">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>5B4585A3-7EC4-D407-BFB3-F7E544E12B0D</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C139B546-FE45-304C-F091-5C19354D5AFE"/>
+<colUsage columnID="71FE238E-4CF6-3468-2DDE-0741FBAF4546"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6DB952C2-0C07-07E8-B1A1-E85B9DE5E570" name="obradiva_povrsina_lovacka_udruga_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>53FB4A5E-0665-1D18-C9C1-A4C9466A354D</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F671AA76-F95D-9FA8-0827-4DBCE46BBA1A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

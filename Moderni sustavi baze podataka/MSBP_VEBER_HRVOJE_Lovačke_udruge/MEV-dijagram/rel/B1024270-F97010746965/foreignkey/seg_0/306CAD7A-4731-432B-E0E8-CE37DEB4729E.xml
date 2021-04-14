@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="306CAD7A-4731-432B-E0E8-CE37DEB4729E" containerWithKeyObject="4C6D2D62-9CF6-4095-15A2-FBF51F9FC2C2" localFKIndex="201B2ECE-709B-4FB7-A148-E2CA385BD2E6" name="dozvoljena_divljac_pojedinacni_mjesecna_dozvola_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>A7A5E52C-0926-99E3-0C19-031EBE04881E</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<referredTableLongName>mjesecna_dozvola</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>256A8508-4D3F-6142-6865-022E699EBA69</referredTableID>
+<keyObject>48DD90A5-2B1D-0EFD-2C38-04E7ED7817F1</keyObject>
+<referredKeyID>48DD90A5-2B1D-0EFD-2C38-04E7ED7817F1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>dozvola_id,clan_oib,lovacka_udruga_lovacka_udruga_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

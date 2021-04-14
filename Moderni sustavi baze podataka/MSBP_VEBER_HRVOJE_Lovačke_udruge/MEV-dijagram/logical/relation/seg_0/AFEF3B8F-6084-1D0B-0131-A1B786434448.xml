@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_22" directorySegmentName="seg_0" id="AFEF3B8F-6084-1D0B-0131-A1B786434448">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 10:11:48 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<sourcePk>47988F6E-08AC-E78D-357A-9F866C62A5EE</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7F45A479-9FE1-47AA-AE34-0F56F87A0A8A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>96BD4D38-2494-BDED-0C0B-F3E841260AAB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

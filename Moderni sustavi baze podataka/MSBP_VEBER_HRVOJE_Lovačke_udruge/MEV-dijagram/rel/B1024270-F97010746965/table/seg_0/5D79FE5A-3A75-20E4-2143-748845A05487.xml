@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5D79FE5A-3A75-20E4-2143-748845A05487" name="skupni_lov">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>E71BCAEB-AA31-512D-B0F9-AA765B9F5558</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="skupni_lov_id" id="FFCED1A6-5C3D-DE39-B337-B3202DF96C9A">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>61743A6F-AA84-E4AB-401F-8803E1E730FF</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mjesto" id="91CD0740-0E22-185D-F41A-FA93113A88A6">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>FB5636C9-A9F1-5EDB-B545-84E51C35A589</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum" id="D0334759-8553-372D-9D95-818E546FDF3D">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>5DD67615-41FF-FB04-33F4-CE4166B38248</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lovacka_udruga_lovacka_udruga_id" id="67187BE1-E7E9-DE8B-75C5-F3DBBE4C2501">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>ADA22964-CF33-7FCC-A9F9-453C01A04179</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A4616C4D-AA85-0015-7F6C-EC949B84B42E" referredColumn="D10D198F-2AAC-4388-3B8B-24E80FD6F75A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="52DAAD0F-C2E3-129E-D9E5-DEB8C7DB6A5A" name="skupni_lov_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>22A6C302-4CB8-7C6B-CD58-2A1879217871</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FFCED1A6-5C3D-DE39-B337-B3202DF96C9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F990121B-B3F5-FEE3-2295-F2F718226064" name="skupni_lov_lovacka_udruga_lovacka_udruga_id_mjesto_datum_UN">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:35:05 UTC</createdTime>
+<generatorID>0CFBB4E0-29EB-CB9D-114C-D0F3A31F8B9D</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67187BE1-E7E9-DE8B-75C5-F3DBBE4C2501"/>
+<colUsage columnID="91CD0740-0E22-185D-F41A-FA93113A88A6"/>
+<colUsage columnID="D0334759-8553-372D-9D95-818E546FDF3D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F6D24D2-2106-7A0C-9ECB-485ED89EED57" name="skupni_lov_lovacka_udruga_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>1F0D7A12-90B4-ACCB-7B58-8A1194FE8655</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67187BE1-E7E9-DE8B-75C5-F3DBBE4C2501"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

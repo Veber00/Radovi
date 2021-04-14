@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="221F7C66-4438-876A-414A-60F7F26D66E9" name="lovacka_udruga">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>05DC8D0D-437E-8F49-771F-B7814C576CD8</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="lovacka_udruga_id" id="D10D198F-2AAC-4388-3B8B-24E80FD6F75A">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>7E944D20-37BF-78CB-40B3-088635B8A479</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="naziv" id="9D5C443D-9052-ECB9-37B0-762351240DFE">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>55A3401B-0B61-E9E0-4F86-9383DC86989C</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mjesto" id="B6C211F7-DA5A-DF91-FDB3-FD12014C716E">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>4341C510-A704-C9BC-1740-53A9D01CEFB5</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="broj_lovista" id="DEA34986-B965-5DAD-5955-0B81F7AA00E6">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>CBD3763B-FB34-5002-B0F9-CC39F2C6C5C6</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="povrsina_lovista" id="F14338D0-A0F8-EA65-93C8-953B5337C957">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>3C99E527-36D2-A887-AD1E-4EEBE669E3EA</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zupanija" id="D8AD2F7D-564B-9D5B-C4E8-E9BC38A901EE">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>F668FA9D-E70D-DC03-6A3B-815EF61F9F0A</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7F7D0057-27AC-71C5-F483-9DB37E730620" name="lovacka_udruga_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>F1E386C8-AD21-CDDD-5707-1A4BAE2CE7E0</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D10D198F-2AAC-4388-3B8B-24E80FD6F75A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E60A675-DAAA-879E-8B23-6DE0003CEC0B" name="lovacka_udruga_zupanija_broj_lovista_UN">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>B36B8F03-5D89-4650-994C-09E86617808E</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D8AD2F7D-564B-9D5B-C4E8-E9BC38A901EE"/>
+<colUsage columnID="DEA34986-B965-5DAD-5955-0B81F7AA00E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="698E7660-782F-37D9-ABD8-0A82CEBE0AB6" containerWithKeyObject="92E36128-F4D1-9960-3AAD-6C37271A5119" localFKIndex="30ADB710-E7AB-13BB-8842-D576677BC29A" name="plan_gospodarenja_divljac_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>7491A0AD-BEB0-0372-14D7-B3F21D04D8BA</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<referredTableLongName>divljac</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B6007B14-4207-6D4B-8DB5-9DA68EC20DBE</referredTableID>
+<keyObject>5F0BDE50-3CDD-6B37-52F0-1AC403C01E40</keyObject>
+<referredKeyID>5F0BDE50-3CDD-6B37-52F0-1AC403C01E40</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>divljac_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="63A9629E-F23F-B448-234F-9355283C4640" containerWithKeyObject="55D6E1EF-8458-D705-DC34-0730757FD402" localFKIndex="5A6C1EC2-3817-4216-84D4-F994E1C0D2C0" name="sredstva_za_rad_lovacka_udruga_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>98A7659B-2613-F211-2A6D-CE41BFD41D39</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<referredTableLongName>lovacka_udruga</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>221F7C66-4438-876A-414A-60F7F26D66E9</referredTableID>
+<keyObject>7F7D0057-27AC-71C5-F483-9DB37E730620</keyObject>
+<referredKeyID>7F7D0057-27AC-71C5-F483-9DB37E730620</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>lovacka_udruga_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="91EF48BE-4B3D-C3B3-5542-9F53501D3952">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:31:20 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

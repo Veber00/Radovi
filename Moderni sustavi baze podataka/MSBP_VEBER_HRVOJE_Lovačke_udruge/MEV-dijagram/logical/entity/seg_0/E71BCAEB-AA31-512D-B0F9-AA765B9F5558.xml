@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E71BCAEB-AA31-512D-B0F9-AA765B9F5558" name="skupni_lov">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 10:12:19 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="lovacka_udruga_id" id="ADA22964-CF33-7FCC-A9F9-453C01A04179">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 14:55:11 UTC</createdTime>
+<generatorID>1F0D7A12-90B4-ACCB-7B58-8A1194FE8655</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<referedAttribute>7E944D20-37BF-78CB-40B3-088635B8A479</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="skupni_lov_id" id="61743A6F-AA84-E4AB-401F-8803E1E730FF">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 10:15:19 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mjesto" id="FB5636C9-A9F1-5EDB-B545-84E51C35A589">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 10:12:30 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum" id="5DD67615-41FF-FB04-33F4-CE4166B38248">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 14:48:53 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="22A6C302-4CB8-7C6B-CD58-2A1879217871" name="Skupni_lov PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 10:15:34 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>61743A6F-AA84-E4AB-401F-8803E1E730FF</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="0CFBB4E0-29EB-CB9D-114C-D0F3A31F8B9D" name="SKUPNI_LOV_UQ">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:30:13 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="false"/>
+</engineerTo>
+<newElementsIDs>1F0D7A12-90B4-ACCB-7B58-8A1194FE8655,FB5636C9-A9F1-5EDB-B545-84E51C35A589,5DD67615-41FF-FB04-33F4-CE4166B38248</newElementsIDs>
+<usedAttributes>
+<attributeRef>ADA22964-CF33-7FCC-A9F9-453C01A04179</attributeRef>
+<attributeRef>FB5636C9-A9F1-5EDB-B545-84E51C35A589</attributeRef>
+<attributeRef>5DD67615-41FF-FB04-33F4-CE4166B38248</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

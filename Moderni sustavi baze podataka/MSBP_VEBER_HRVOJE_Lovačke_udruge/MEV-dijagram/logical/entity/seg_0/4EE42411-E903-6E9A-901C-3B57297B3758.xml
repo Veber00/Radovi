@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4EE42411-E903-6E9A-901C-3B57297B3758" name="divljac">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 09:31:17 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="divljac_id" id="F826BE53-D858-1A7B-20F6-46F9F746FECB">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 08:00:33 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="naziv" id="E254C543-D8BA-D827-E0B8-6FB5CE19CD5A">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 09:31:34 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vrsta" id="8E85C3F1-DA1F-7CF3-BAB7-6FBF92799955">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 09:33:41 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="spol" id="1FBBC728-9DE9-907A-15A5-BCD6C61EF744">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-17 20:00:12 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pocetak_lovidbe" id="06B4304A-ABE3-E058-955F-E43C365DB43E">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 11:56:29 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="zavrsetak_lovidbe" id="A5325F3D-1FE2-6F60-3496-A695E4E16760">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 11:56:42 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F9107F87-EA5F-688D-8E9F-E473B3583FB7" name="Životinja PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 09:37:27 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F826BE53-D858-1A7B-20F6-46F9F746FECB</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="7E4ED926-6E63-8A99-047B-A0E0AACCE612" name="divljac_uq">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-22 08:25:23 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<newElementsIDs>E254C543-D8BA-D827-E0B8-6FB5CE19CD5A,8E85C3F1-DA1F-7CF3-BAB7-6FBF92799955,1FBBC728-9DE9-907A-15A5-BCD6C61EF744</newElementsIDs>
+<usedAttributes>
+<attributeRef>E254C543-D8BA-D827-E0B8-6FB5CE19CD5A</attributeRef>
+<attributeRef>8E85C3F1-DA1F-7CF3-BAB7-6FBF92799955</attributeRef>
+<attributeRef>1FBBC728-9DE9-907A-15A5-BCD6C61EF744</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

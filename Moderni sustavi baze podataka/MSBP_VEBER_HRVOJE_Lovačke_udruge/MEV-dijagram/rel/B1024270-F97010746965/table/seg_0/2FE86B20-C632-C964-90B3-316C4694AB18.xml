@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2FE86B20-C632-C964-90B3-316C4694AB18" name="clanarina">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>7E207747-3D49-39A0-D5BE-59EFC5294C8D</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<ordsAlias>clanarinav1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="status" id="5F5DF124-4261-F1FC-93FF-1ED5EC883718">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>92805292-53FF-D9AD-DAF0-8F94F4BE6A83</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="iznos" id="9FD4D268-8C2F-1670-F210-E9B40C93C55F">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>DB061797-51D4-9821-2249-3E22E06360B2</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lovacka_udruga_lovacka_udruga_id" id="0E6E0F5F-C1C8-3BC3-5DEB-CDE3541C61A7">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>E5F0C344-B2FD-635A-25DD-77D160943E92</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68A4A8CB-BEB5-64C0-DCCB-0C2B0757C95E" referredColumn="D10D198F-2AAC-4388-3B8B-24E80FD6F75A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6DA39030-C92A-B615-ABB8-64687BCA4794" name="clanarinav2_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>1B320ED7-313A-F743-E55B-021D9B6FC487</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F5DF124-4261-F1FC-93FF-1ED5EC883718"/>
+<colUsage columnID="0E6E0F5F-C1C8-3BC3-5DEB-CDE3541C61A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6617322A-3766-4367-4F9A-A5C938263235" name="clanarinav2_lovacka_udruga_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-25 20:06:33 UTC</createdTime>
+<generatorID>B9EDEA3B-9261-0C48-8345-9C205AD9D337</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E6E0F5F-C1C8-3BC3-5DEB-CDE3541C61A7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

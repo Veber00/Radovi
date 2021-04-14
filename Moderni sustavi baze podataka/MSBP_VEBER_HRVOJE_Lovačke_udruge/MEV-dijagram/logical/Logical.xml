@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="29BDEA12-9159-00F9-772F-4CF0C6420C3E" mainViewID="9C3BD5AD-F849-21E8-556B-28DF80E1B17B">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:31:19 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4141CDB9-EE19-CBEC-A00E-C9474BE37E28" containerWithKeyObject="E3F63339-73CA-8A66-C7B5-2228248FB6CA" localFKIndex="D09B8E80-067F-4464-3B48-874EF455B639" name="lov_clan_FK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 18:53:52 UTC</createdTime>
+<generatorID>AFEF3B8F-6084-1D0B-0131-A1B786434448</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<referredTableLongName>clan</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>91EAB9ED-C7D3-40E9-C393-0C14763E0384</referredTableID>
+<keyObject>C44263F8-B0FC-B619-6531-22F03BB7E9D4</keyObject>
+<referredKeyID>C44263F8-B0FC-B619-6531-22F03BB7E9D4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>oib</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="MEV-dijagram" id="8E5E40BC-C512-59D2-095B-B026B5AD568F" version="3.5">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 09:31:19 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>8E5E40BC-C512-59D2-095B-B026B5AD568F</designId>
+</OSDM_Design>

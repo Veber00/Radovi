@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="770D6333-F13A-9540-A650-572AFFFF4BFE" name="prijem_u_clanstvo">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 19:40:19 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="datum_upisa" id="117D84BF-B299-DFA0-4651-9CE704C12DDE">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-15 19:41:02 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum_ispisa" id="430BB151-3A21-9306-1021-F43D88AC35A7">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 07:47:26 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lovacka_udruga_id" id="872C10D2-9A22-3395-5C96-02EC61B011BC">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-04 20:04:55 UTC</createdTime>
+<generatorID>D3C016DB-0FC2-39C7-0FA4-1AABAE148349</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<referedAttribute>7E944D20-37BF-78CB-40B3-088635B8A479</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="oib" id="23BA53A3-DF60-349E-F955-36C67DCC8BF5">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-10 20:33:25 UTC</createdTime>
+<generatorID>3FC52C6C-90C0-6AA9-D8D5-3EB4DF04FFD0</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<referedAttribute>908F527A-2A29-C489-F4F7-3FD5F8B30C2C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="03E8C421-B735-A2B4-6D8A-292A62BE56E4" name="PRIJEM_U_CLANSTVO_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-22 09:12:30 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>117D84BF-B299-DFA0-4651-9CE704C12DDE,D3C016DB-0FC2-39C7-0FA4-1AABAE148349,3FC52C6C-90C0-6AA9-D8D5-3EB4DF04FFD0</newElementsIDs>
+<usedAttributes>
+<attributeRef>117D84BF-B299-DFA0-4651-9CE704C12DDE</attributeRef>
+<attributeRef>872C10D2-9A22-3395-5C96-02EC61B011BC</attributeRef>
+<attributeRef>23BA53A3-DF60-349E-F955-36C67DCC8BF5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

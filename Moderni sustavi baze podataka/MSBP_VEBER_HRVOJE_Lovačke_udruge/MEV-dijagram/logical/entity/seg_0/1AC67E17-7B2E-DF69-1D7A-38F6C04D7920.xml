@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1AC67E17-7B2E-DF69-1D7A-38F6C04D7920" name="plan_gospodarenja">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 09:45:59 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="lovacka_udruga_id" id="4AA7511A-B6CD-83F3-D8B4-E86ABF7A8B31">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-04 20:04:55 UTC</createdTime>
+<generatorID>960FABC3-B1BD-C219-4B03-DB125A5B750E</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<referedAttribute>7E944D20-37BF-78CB-40B3-088635B8A479</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="divljac_id" id="C2B70286-812B-F217-186C-758ACA240400">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-05 08:00:45 UTC</createdTime>
+<generatorID>7491A0AD-BEB0-0372-14D7-B3F21D04D8BA</generatorID>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<referedAttribute>F826BE53-D858-1A7B-20F6-46F9F746FECB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lovidbena_godina" id="71BD7270-1100-972D-A8B8-E21D8393F664">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-05-04 19:59:00 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dopusten_odstrijel" id="1535E381-C918-D6C1-025F-DB8ACB59797C">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-04-16 12:07:32 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ostvareni_odstrijel" id="84FE7A07-E02D-2899-C6DA-22B498246BFB">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-21 14:18:07 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9C4C2B2F-B805-24BB-D808-371889195831" name="PLAN_GOSPODARENJA_PK">
+<createdBy>Korisnik</createdBy>
+<createdTime>2020-06-22 06:38:12 UTC</createdTime>
+<ownerDesignName>MEV-dijagram</ownerDesignName>
+<engineerTo>
+<item key="B1024270-ACD7-FFAB-C340-F97010746965" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>71BD7270-1100-972D-A8B8-E21D8393F664,7491A0AD-BEB0-0372-14D7-B3F21D04D8BA,960FABC3-B1BD-C219-4B03-DB125A5B750E</newElementsIDs>
+<usedAttributes>
+<attributeRef>71BD7270-1100-972D-A8B8-E21D8393F664</attributeRef>
+<attributeRef>C2B70286-812B-F217-186C-758ACA240400</attributeRef>
+<attributeRef>4AA7511A-B6CD-83F3-D8B4-E86ABF7A8B31</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
