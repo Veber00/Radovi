@@ -1,0 +1,1291 @@
+function Ball.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 0
+push argument 1
+pop this 1
+push argument 2
+pop this 2
+push constant 1
+neg
+pop this 3
+push constant 1
+neg
+pop this 4
+push pointer 0
+call Ball.draw 1
+pop temp 0
+push pointer 0
+return
+function Ball.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Ball.draw 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 256
+push constant 126
+push constant 4
+call Screen.drawCircle 3
+pop temp 0
+push constant 258
+push constant 122
+push constant 260
+push constant 124
+call Screen.drawLine 4
+pop temp 0
+push constant 260
+push constant 128
+push constant 258
+push constant 130
+call Screen.drawLine 4
+pop temp 0
+push constant 254
+push constant 122
+push constant 252
+push constant 124
+call Screen.drawLine 4
+pop temp 0
+push constant 252
+push constant 128
+push constant 254
+push constant 130
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.ereaseBall 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push constant 5
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function Ball.ereaseSquare 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Ball.getx 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Ball.gety 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Ball.setx 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 0
+push constant 0
+return
+function Ball.sety 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 1
+push constant 0
+return
+function Ball.getsize 0
+push argument 0
+pop pointer 0
+push this 2
+return
+function Ball.getdx 0
+push argument 0
+pop pointer 0
+push this 3
+return
+function Ball.getdy 0
+push argument 0
+pop pointer 0
+push this 4
+return
+function Ball.setdx 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 3
+push constant 0
+return
+function Ball.setdy 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 4
+push constant 0
+return
+function Ball.moveBallRD 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 1
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 4
+sub
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+add
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveBallRU 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveBallLD 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveBallLU 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+add
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 1
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 4
+sub
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveBallD 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveBallU 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+add
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+add
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 5
+sub
+push this 1
+push constant 2
+sub
+push this 0
+push constant 2
+sub
+push this 1
+push constant 5
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 2
+add
+push this 1
+push constant 5
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 2
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveSquareRD 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 5
+add
+push this 1
+push constant 4
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveSquareRU 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveSquareLD 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveSquareLU 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveSquareD 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Ball.moveSquareU 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+add
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+add
+call Screen.drawLine 4
+pop temp 0
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push constant 4
+sub
+push this 1
+push constant 4
+sub
+push this 0
+push constant 4
+add
+push this 1
+push constant 4
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return

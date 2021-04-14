@@ -1,0 +1,129 @@
+class Player {
+
+    field int x, y;
+    field int width, length, speed;
+
+    constructor Player new(int Ax, int Ay, int Awidth, int Alength) {
+        let x = Ax;
+        let y = Ay;
+        let width = Awidth;
+        let length = Alength;
+        let speed = 1;
+        do draw();
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method void draw() {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + width, y + length);
+        return;
+    }
+
+    method void erease() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x - 1, y, x + width + 1, y + length);
+        return;
+    }
+
+    method int getx(){
+        return x;
+    }
+
+    method int gety(){
+        return y;
+    }
+
+    method int getwidth() {
+        return width;
+    }
+
+    method int getlength() {
+        return length;
+    }
+
+    method void setSpeed(int ASpeed) {
+        let speed = ASpeed;
+        return;
+    }
+    
+
+    method void moveLeftBasic() {
+        if (x > 5) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle((x + width - speed), y, (x + width + speed), y + length);
+            let x = x - speed;
+            do Screen.setColor(true);
+            do Screen.drawRectangle(x, y, (x + speed), y + length);
+        }
+        return;
+    }
+
+    method void moveLeftVoid() {
+        if (x > 5) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle((x + width - speed), y, (x + width + speed), y + length);
+            do Screen.drawRectangle((x + 7 - speed), (y + 4), (x + 7), (y + length - 4));
+            let x = x - speed;
+            do Screen.setColor(true);
+            do Screen.drawRectangle((x + width - 7), (y + 4), (x + width - 7 + speed), (y + length - 4));
+            do Screen.drawRectangle(x, y, (x + speed), y + length);
+        }
+        return;
+    }
+
+    method void moveLeftStand() {
+        if (x > 5) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle((x + width - speed), y, (x + width + speed), y + length);
+            do Screen.drawRectangle((x + 7 - speed), (y + 4), (x + 7), (y + length));
+            let x = x - speed;
+            do Screen.setColor(true);
+            do Screen.drawRectangle(x, y, (x + speed), y + length);
+            do Screen.drawRectangle((x + width - 7), (y + 4), (x + width - 7 + speed), (y + length));
+        }
+        return;
+    }
+
+    method void moveRightBasic() {
+        if ((x + width) < 505) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, (x + speed), y + length);
+            let x = x + speed;
+            do Screen.setColor(true);
+            do Screen.drawRectangle((x + width - speed), y, (x + width + speed), y + length);
+        }
+        return;
+    }
+
+    method void moveRightVoid() {
+        if ((x + width) < 505) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, (x + speed), y + length);
+            do Screen.drawRectangle((x + width - 7), (y + 4), (x + width + speed - 7), (y + length - 4));
+            let x = x + speed;
+            do Screen.setColor(true);
+            do Screen.drawRectangle((x + width - speed), y, (x + width), y + length);
+            do Screen.drawRectangle((x - speed + 7), (y + 4), (x + 7), (y + length - 4));
+        }
+        return;
+    }
+
+    method void moveRightStand() {
+        if ((x + width) < 505) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, (x + speed), y + length);
+            do Screen.drawRectangle((x + width - 7), (y + 4), (x + width + speed - 7), (y + length));
+            let x = x + speed;
+            do Screen.setColor(true);
+            do Screen.drawRectangle((x + 7 - speed), (y + 4), (x + 7), (y + length));
+            do Screen.drawRectangle((x + width - speed), y, (x + width), (y + length));
+        }
+        return;
+    }
+
+}

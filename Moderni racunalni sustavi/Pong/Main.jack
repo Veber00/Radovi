@@ -1,0 +1,15 @@
+class Main {
+
+    function void main () {
+        var PongGame game;
+        while(true) {
+            let game = PongGame.new();
+            do game.start();
+            do game.run();
+            do game.end();
+            do game.dispose();
+        }
+
+    return;
+    }
+}

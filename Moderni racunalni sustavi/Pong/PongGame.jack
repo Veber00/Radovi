@@ -1,0 +1,948 @@
+class PongGame {
+    
+    field Player player;
+    field Ball ball;
+    field Computer computer;
+    field int peddalskin, slow, wtime, slowcomp, ballskin, playerball, compball, difficulty, direction, compScore, playerScore;
+    field boolean winner;
+
+    constructor PongGame new() {
+        let player = Player.new(221, 243, 70, 10);
+        let ball = Ball.new(256, 126, 4);
+        let computer = Computer.new(221, 0, 70, 10);
+        let direction = 0;
+        let compScore = 0;
+        let playerScore = 0;
+        let peddalskin = 1;
+        let ballskin = 1;
+        let difficulty = 1;
+        let playerball = 1;
+        let compball = 1;
+        let slow = 1;
+        let wtime = 4;
+        let slowcomp = 1;
+        let winner = false;
+        do Screen.setColor(true);
+        do Screen.drawRectangle(30, 11, 32, 243);
+        do Screen.drawRectangle(482, 11, 484, 243);
+        do Output.moveCursor(1, 1);
+        do Output.printInt(compScore);
+        do Output.moveCursor(5, 1);
+        do Output.printString("+");
+        do Output.moveCursor(7, 1);
+        do Output.printString("S");
+        do Output.moveCursor(9, 1);
+        do Output.printString("C");
+        do Output.moveCursor(11, 1);
+        do Output.printString("O");
+        do Output.moveCursor(13, 1);
+        do Output.printString("R");
+        do Output.moveCursor(15, 1);
+        do Output.printString("E");
+        do Output.moveCursor(17, 1);
+        do Output.printString("+");
+        do Output.moveCursor(21, 1);
+        do Output.printInt(playerScore);
+
+        do Output.moveCursor(1, 62);
+        do Output.printString("D");
+        do Output.moveCursor(3, 62);
+        do Output.printString("I");
+        do Output.moveCursor(5, 62);
+        do Output.printString("F");
+        do Output.moveCursor(7, 62);
+        do Output.printString("F");
+
+        do Screen.drawLine(490, 98, 492, 98);
+        do Screen.drawLine(505, 98, 507, 98);
+        do Screen.drawLine(491, 99, 493, 99);
+        do Screen.drawLine(504, 99, 506, 99);
+        do Screen.drawLine(492, 100, 494, 100);
+        do Screen.drawLine(503, 100, 505, 100);
+        do Screen.drawLine(493, 101, 495, 101);
+        do Screen.drawLine(502, 101, 504, 101);
+        do Screen.drawLine(494, 102, 496, 102);
+        do Screen.drawLine(501, 102, 503, 102);
+        do Screen.drawLine(495, 103, 497, 103);
+        do Screen.drawLine(500, 103, 502, 103);
+        do Screen.drawLine(496, 104, 498, 104);
+        do Screen.drawLine(499, 104, 501, 104);
+        do Screen.drawLine(497, 105, 499, 105);
+        do Screen.drawLine(498, 105, 500, 105);
+        do Screen.drawLine(498, 106, 499, 106);
+
+        do Output.moveCursor(12, 62);
+        do Output.printString("E");
+        do Output.moveCursor(14, 62);
+        do Output.printString("A");
+        do Output.moveCursor(16, 62);
+        do Output.printString("S");
+        do Output.moveCursor(18, 62);
+        do Output.printString("Y");
+        
+        return this;
+    }
+
+
+    method void movePlayer() {
+        if (direction = 1) { 
+            if(peddalskin = 1){
+                do player.moveLeftBasic(); 
+            }
+            if(peddalskin = 2) {
+                do player.moveLeftVoid();
+            }
+            if(peddalskin = 3) {
+                do player.moveLeftStand();
+            }
+        }
+        if (direction = 2) { 
+            if(peddalskin = 1) {
+                do player.moveRightBasic(); 
+            }
+            if(peddalskin = 2) {
+                do player.moveRightVoid();
+            }
+            if(peddalskin = 3) {
+                do player.moveRightStand();
+            }
+        }
+
+
+        return;
+    }
+
+    method void moveComputer() {
+
+        var int counter;
+        let counter = 0;
+
+        if(slowcomp = 1) {
+
+        if(difficulty = 1){
+
+            do computer.setSpeed(1);
+            do player.setSpeed(1);
+            if(ball.getdy() < 0) {
+                if(ball.gety() < 165) {
+                    if((computer.getx() + (computer.getwidth()/2)) < (ball.getx() + (ball.getsize() / 2))) {
+                        if(peddalskin = 1){
+                            do computer.moveRightBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveRightVoid();
+                        }
+                        if(peddalskin = 3){
+                            do computer.moveRightStand();
+                        }
+                    } else {
+                        if(peddalskin = 1){
+                            do computer.moveLeftBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveLeftVoid();
+                        }
+                        if(peddalskin = 3) {
+                            do computer.moveLeftStand();
+                        }
+                    }
+                }
+
+                if(ball.gety() > 210) {
+                    if((computer.getx() + (computer.getwidth()/2)) < (ball.getx() + (ball.getsize() / 2))) {
+                        if(peddalskin = 1){
+                            do computer.moveRightBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveRightVoid();
+                        }
+                        if(peddalskin = 3){
+                            do computer.moveRightStand();
+                        }
+                    } else {
+                        if(peddalskin = 1){
+                            do computer.moveLeftBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveLeftVoid();
+                        }
+                        if(peddalskin = 3) {
+                            do computer.moveLeftStand();
+                        }
+                    }
+                }
+            }
+        }
+    
+    
+        if(difficulty = 2){
+            
+            do computer.setSpeed(2);
+            do player.setSpeed(1);
+            if(ball.getdy() < 0) {
+                if(ball.gety() < 101) {
+                    if((computer.getx() + (computer.getwidth()/2)) < (ball.getx() + (ball.getsize() / 2))) {
+                        if(peddalskin = 1){
+                            do computer.moveRightBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveRightVoid();
+                        }
+                        if(peddalskin = 3){
+                            do computer.moveRightStand();
+                        }
+                    } else {
+                        if(peddalskin = 1){
+                            do computer.moveLeftBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveLeftVoid();
+                        }
+                        if(peddalskin = 3) {
+                            do computer.moveLeftStand();
+                        }
+                    }
+                }
+                
+            }
+
+        }
+
+        if(difficulty = 3){
+            do computer.setSpeed(2);
+            do player.setSpeed(1);
+            if(ball.getdy() < 0) {
+                if(ball.gety() < 103) {
+                    if((computer.getx() + (computer.getwidth()/2)) < (ball.getx() + (ball.getsize() / 2))) {
+                        if(peddalskin = 1){
+                            do computer.moveRightBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveRightVoid();
+                        }
+                        if(peddalskin = 3){
+                            do computer.moveRightStand();
+                        }
+                    } else {
+                        if(peddalskin = 1){
+                            do computer.moveLeftBasic();
+                        }
+                        if(peddalskin = 2){
+                            do computer.moveLeftVoid();
+                        }
+                        if(peddalskin = 3) {
+                            do computer.moveLeftStand();
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+
+        let slowcomp = slowcomp + 1;
+        if(slowcomp = 3) {let slowcomp = 1;}
+
+        return;
+    }
+
+    method void moveBall() {
+
+        if(slow = 1) {
+
+        if(ballskin = 1){
+            if((ball.getdx() > 0) & (ball.getdy() > 0)){
+                do ball.moveBallRD();
+            }
+            if((ball.getdx() > 0) & (ball.getdy() < 0)){
+                do ball.moveBallRU();
+            }
+            if((ball.getdx() < 0) & (ball.getdy() < 0)){
+                do ball.moveBallLU();
+            }
+            if((ball.getdx() < 0) & (ball.getdy() > 0)){
+                do ball.moveBallLD();
+            }
+            if((ball.getdx() = 0) & (ball.getdy() > 0)){
+                do ball.moveBallD();
+            }
+            if((ball.getdx() = 0) & (ball.getdy() < 0)){
+                do ball.moveBallU();
+            }
+        }
+
+        if(ballskin = 2){
+            if((ball.getdx() > 0) & (ball.getdy() > 0)){
+                do ball.moveSquareRD();
+            }
+            if((ball.getdx() > 0) & (ball.getdy() < 0)){
+                do ball.moveSquareRU();
+            }
+            if((ball.getdx() < 0) & (ball.getdy() < 0)){
+                do ball.moveSquareLU();
+            }
+            if((ball.getdx() < 0) & (ball.getdy() > 0)){
+                do ball.moveSquareLD();
+            }
+            if((ball.getdx() = 0) & (ball.getdy() > 0)){
+                do ball.moveSquareD();
+            }
+            if((ball.getdx() = 0) & (ball.getdy() < 0)){
+                do ball.moveSquareU();
+            }
+        }
+
+        if((ball.gety() + ball.getsize()) > (player.gety() - 4)) {
+            
+            if(((ball.getx() + (ball.getsize()/2)) > (player.getx() - 5)) & ((ball.getx()) < (player.getx() + (player.getwidth()/3) + 1))) {
+                do ball.setdx(-1);
+                do ball.setdy(-1);
+            }
+
+            if(((ball.getx() + (ball.getsize()/2)) > (player.getx() + (2*(player.getwidth()/3)-1))) & ((ball.getx() - (ball.getsize()/2)) < (player.getx() + (player.getwidth() + 5)))) {
+                do ball.setdx(1);
+                do ball.setdy(-1);
+            }
+
+            if(((ball.getx() + (ball.getsize()/2)) > (player.getx() + (player.getwidth()/3))) & ((ball.getx() + (ball.getsize()/2)) < (player.getx() + (2*(player.getwidth()/3))))) {
+                do ball.setdx(0);
+                do ball.setdy(-1);
+            }
+        }
+
+        if(ball.gety() < (computer.gety() + computer.getlength() + ball.getsize() + 4)) {
+            
+            if(((ball.getx() + (ball.getsize()/2)) > (computer.getx() + (2*(computer.getwidth()/3)-1))) & ((ball.getx() - ball.getsize()) < (computer.getx() + (computer.getwidth() + 6)))) {
+                do ball.setdx(1);
+                do ball.setdy(1);
+            }
+
+            if(((ball.getx() + (ball.getsize()/2)) > (computer.getx() - 5)) & ((ball.getx() + (ball.getsize()/2)) < (computer.getx() + (2*(computer.getwidth()/3) + 1)))) {
+                do ball.setdx(-1);
+                do ball.setdy(1);
+            }
+
+            if(((ball.getx() + (ball.getsize()/2)) > (computer.getx() + (computer.getwidth()/3))) & ((ball.getx() + (ball.getsize()/2)) < (computer.getx() + (2*(computer.getwidth()/3))))) {
+                do ball.setdx(0);
+                do ball.setdy(1);
+            }
+        }
+
+        if((ball.getx() - ball.getsize()) < 35) {
+            do ball.setdx(1);
+        }
+
+
+        if((ball.getx() + ball.getsize()) > 479) {
+            do ball.setdx(-1);
+        }
+
+        if(ball.gety() < (computer.gety() + (computer.getlength()/2) + 3)){
+            if(ballskin = 1){ do ball.ereaseBall(); }
+            if(ballskin = 2){ do ball.ereaseSquare(); }
+            
+            do ball.setx(256);
+            do ball.sety(126);
+
+            if(playerball = 1) {
+                do ball.setdx(1);
+                do ball.setdy(1);
+            }
+            if (playerball = 2) {
+                do ball.setdx(-1);
+                do ball.setdy(1);
+            }
+            if(playerball = 3) {
+                do ball.setdx(0);
+                do ball.setdy(1);
+            }
+
+            let playerball = playerball + 1;
+            if(playerball = 4) { let playerball = 1; }
+            
+            let playerScore = playerScore + 1;
+            do Output.moveCursor(21, 1);
+            do Output.printInt(playerScore);
+            if(playerScore = 5) { let winner = true; }
+        }
+
+        if(ball.gety() > (player.gety() + (player.getlength()/2) - 2)){
+            if(ballskin = 1){ do ball.ereaseBall(); }
+            if(ballskin = 2){ do ball.ereaseSquare(); }
+            do ball.setx(256);
+            do ball.sety(126);
+
+            if(compball = 1) {
+                do ball.setdx(-1);
+                do ball.setdy(-1);
+            }
+            if(compball = 2) {
+                do ball.setdx(1);
+                do ball.setdy(-1);
+            }
+            if(compball = 3) {
+                do ball.setdx(0);
+                do ball.setdy(-1);
+            }
+
+            let compball = compball + 1;
+            if(compball = 4) { let compball = 1; }
+
+            let compScore = compScore + 1;
+            do Output.moveCursor(1, 1);
+            do Output.printInt(compScore);
+            if(compScore = 5) { let winner = true; }
+        }
+
+    }
+
+        let slow = slow + 1;
+        if(slow = 3) { let slow = 1; }
+        
+        do Sys.wait(wtime);
+        return;
+    }
+
+    method void start() {
+
+        var char key;
+        var boolean exit;
+        var int paddleCounter, ballCounter, difficultyCounter;
+        let exit = false;
+        let paddleCounter = 1;
+        let ballCounter = 1;
+        let difficultyCounter = 1;
+
+        //P
+        do Screen.setColor(true);
+        do Screen.drawRectangle(120, 30, 125, 65);
+        do Screen.drawRectangle(125, 30, 140, 35);
+        do Screen.drawRectangle(135, 35, 140, 45);
+        do Screen.drawRectangle(125, 45, 140, 50);
+
+        //O
+        do Screen.drawRectangle(150, 30, 170, 35);
+        do Screen.drawRectangle(150, 35, 155, 65);
+        do Screen.drawRectangle(165, 35, 170, 65);
+        do Screen.drawRectangle(155, 60, 165, 65);
+
+        //N
+        do Screen.drawRectangle(180, 30, 185, 65);
+        do Screen.drawRectangle(195, 30, 200, 65);
+        do Screen.drawLine(186, 30, 195, 59);
+        do Screen.drawLine(185, 30, 195, 60);
+        do Screen.drawLine(185, 31, 195, 61);
+        do Screen.drawLine(185, 32, 195, 62);
+        do Screen.drawLine(185, 33, 195, 63);
+        do Screen.drawLine(185, 34, 195, 64);
+        do Screen.drawLine(185, 35, 195, 65);
+        do Screen.drawLine(185, 36, 194, 65);
+
+        //G
+        do Screen.drawRectangle(210, 30, 230, 35);
+        do Screen.drawRectangle(210, 35, 215, 65);
+        do Screen.drawRectangle(215, 60, 230, 65);
+        do Screen.drawRectangle(225, 50, 230, 60);
+        do Screen.drawRectangle(220, 45, 230, 50);
+
+        //G
+        do Screen.drawRectangle(270, 30, 290, 35);
+        do Screen.drawRectangle(270, 35, 275, 65);
+        do Screen.drawRectangle(275, 60, 290, 65);
+        do Screen.drawRectangle(285, 50, 290, 60);
+        do Screen.drawRectangle(280, 45, 290, 50);
+
+        //A
+        do Screen.drawRectangle(300, 30, 320, 35);
+        do Screen.drawRectangle(300, 35, 305, 65);
+        do Screen.drawRectangle(315, 35, 320, 65);
+        do Screen.drawRectangle(305, 45, 315, 50);
+
+        //M
+        do Screen.drawRectangle(330, 30, 335, 65);
+        do Screen.drawLine(336, 30, 345, 49);
+        do Screen.drawLine(335, 30, 345, 50);
+        do Screen.drawLine(335, 31, 345, 51);
+        do Screen.drawLine(335, 32, 345, 52);
+        do Screen.drawLine(335, 33, 345, 53);
+        do Screen.drawLine(335, 34, 345, 54);
+        do Screen.drawLine(335, 35, 345, 55);
+        do Screen.drawLine(335, 36, 345, 56);
+        do Screen.drawLine(335, 37, 345, 56);
+        do Screen.drawLine(335, 36, 345, 55);
+        do Screen.drawLine(345, 49, 355, 30);
+        do Screen.drawLine(345, 50, 355, 31);
+        do Screen.drawLine(345, 51, 355, 32);
+        do Screen.drawLine(345, 52, 355, 33);
+        do Screen.drawLine(345, 53, 355, 34);
+        do Screen.drawLine(345, 54, 355, 35);
+        do Screen.drawLine(346, 55, 355, 36);
+        do Screen.drawLine(345, 56, 355, 37);
+        do Screen.drawRectangle(355, 30, 360, 65);
+
+        //E
+        do Screen.drawRectangle(370, 30, 375, 65);
+        do Screen.drawRectangle(375, 30, 390, 35);
+        do Screen.drawRectangle(375, 45, 387, 50);
+        do Screen.drawRectangle(375, 60, 390, 65);
+
+        //lines
+        do Screen.drawLine(120, 68, 390, 68);
+        do Screen.drawLine(130, 70, 380, 70);
+        do Screen.drawLine(140, 72, 370, 72);
+        do Screen.drawLine(150, 74, 360, 74);
+
+        //paddle skin
+        do Output.moveCursor(9, 6);
+        do Output.printString("Press F to change");
+        do Output.moveCursor(10, 6);
+        do Output.printString("peddal skin");
+
+        do Screen.drawLine(60, 133, 60, 143);
+        do Screen.drawLine(59, 134, 59, 142);
+        do Screen.drawLine(58, 135, 58, 141);
+        do Screen.drawLine(57, 136, 57, 140);
+        do Screen.drawLine(56, 137, 56, 139);
+        do Screen.drawLine(55, 138, 55, 138);
+        
+        do Screen.drawLine(120, 133, 120, 143);
+        do Screen.drawLine(121, 134, 121, 142);
+        do Screen.drawLine(122, 135, 122, 141);
+        do Screen.drawLine(123, 136, 123, 140);
+        do Screen.drawLine(124, 137, 124, 139);
+        do Screen.drawLine(125, 138, 125, 138);
+
+        do Output.moveCursor(12, 9);
+        do Output.printString("Basic");
+
+        //ball skin
+        do Output.moveCursor(9, 42);
+        do Output.printString("Press B to change");
+        do Output.moveCursor(10, 42);
+        do Output.printString("ball skin");
+
+        do Screen.drawLine(360, 133, 360, 143);
+        do Screen.drawLine(359, 134, 359, 142);
+        do Screen.drawLine(358, 135, 358, 141);
+        do Screen.drawLine(357, 136, 357, 140);
+        do Screen.drawLine(356, 137, 356, 139);
+        do Screen.drawLine(355, 138, 355, 138);
+
+        do Screen.drawLine(420, 133, 420, 143);
+        do Screen.drawLine(421, 134, 421, 142);
+        do Screen.drawLine(422, 135, 422, 141);
+        do Screen.drawLine(423, 136, 423, 140);
+        do Screen.drawLine(424, 137, 424, 139);
+        do Screen.drawLine(425, 138, 425, 138);
+
+        do Output.moveCursor(12, 47);
+        do Output.printString("Hexa");
+
+        //game difficulty
+
+        do Output.moveCursor(16, 24);
+        do Output.printString("Press D to change");
+        do Output.moveCursor(17, 24);
+        do Output.printString("game difficulty");
+
+        do Screen.drawLine(220, 210, 220, 220);
+        do Screen.drawLine(219, 211, 219, 219);
+        do Screen.drawLine(218, 212, 218, 218);
+        do Screen.drawLine(217, 213, 217, 217);
+        do Screen.drawLine(216, 214, 216, 216);
+        do Screen.drawLine(215, 215, 215, 215);
+
+        do Screen.drawLine(290, 210, 290, 220);
+        do Screen.drawLine(291, 211, 291, 219);
+        do Screen.drawLine(292, 212, 292, 218);
+        do Screen.drawLine(293, 213, 293, 217);
+        do Screen.drawLine(294, 214, 294, 216);
+        do Screen.drawLine(295, 215, 295, 215);
+
+        do Output.moveCursor(19, 30);
+        do Output.printString("Easy");
+
+        do Output.moveCursor(21, 48);
+        do Output.printString("START");
+
+        do Output.moveCursor(21, 56);
+        do Output.printString("S");
+
+        do Screen.drawLine(430, 231, 430, 241);
+        do Screen.drawLine(431, 232, 431, 240);
+        do Screen.drawLine(432, 233, 432, 239);
+        do Screen.drawLine(433, 234, 433, 238);
+        do Screen.drawLine(434, 235, 434, 237);
+        do Screen.drawLine(435, 236, 435, 236);
+
+        do Screen.drawLine(444, 229, 457, 229);
+        do Screen.drawLine(444, 229, 444, 243);
+        do Screen.drawLine(444, 243, 457, 243);
+        do Screen.drawLine(457, 229, 457, 243);
+
+        while(~exit) {
+
+            
+            while(key = 0) {
+                let key = Keyboard.keyPressed();
+            }
+            
+
+            if((key = 83) | (key = 115)){
+                let exit = true;
+
+                do Screen.setColor(false);
+                do Screen.drawRectangle(120, 30, 390, 74);
+                do Screen.drawRectangle(40, 90, 190, 145);
+                do Screen.drawRectangle(300, 90, 470, 145);
+                do Screen.drawRectangle(190, 160, 350, 225);
+                do Screen.drawRectangle(350, 228, 460, 245);
+            }
+            
+            if((key = 70) | (key = 102)){
+                let paddleCounter = paddleCounter + 1;
+                do Screen.setColor(false);
+                do Screen.drawRectangle(61, 133, 119, 143);
+                do Screen.drawRectangle(221, 242, 291, 254);
+                do Screen.drawRectangle(221, 0, 291, 10);
+
+                if(paddleCounter = 1){
+                    let peddalskin = 1;
+                    do Output.moveCursor(12, 9);
+                    do Output.printString("Basic");
+
+                    do Screen.setColor(true);
+                    do Screen.drawRectangle(221, 0, 291, 10);
+                    do Screen.drawRectangle(221, 243, 291, 253);
+                }
+
+                if(paddleCounter = 2){
+                    let peddalskin = 2;
+                    do Output.moveCursor(12, 9);
+                    do Output.printString("Void");
+
+                    
+                    do Screen.setColor(true);
+                    do Screen.drawRectangle(221, 0, 291, 10);
+                    do Screen.drawRectangle(221, 243, 291, 253);
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(228, 4, 284, 6);
+                    do Screen.drawRectangle(228, 247, 284, 249);
+                }
+
+                if(paddleCounter = 3){
+                    let peddalskin = 3;
+                    do Output.moveCursor(12, 9);
+                    do Output.printString("Stand");
+
+                    do Screen.setColor(true);
+                    do Screen.drawRectangle(221, 0, 291, 10);
+                    do Screen.drawRectangle(221, 243, 291, 253);
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(228, 0, 284, 6);
+                    do Screen.drawRectangle(228, 247, 284, 253);
+                }
+        
+            }
+
+            if((key = 66) | (key = 98)){
+                let ballCounter = ballCounter + 1;
+                do Screen.setColor(false);
+                do Screen.drawRectangle(361, 133, 419, 143);
+
+                if(ballCounter = 1){
+                    do Screen.setColor(false);
+                    do Screen.drawRectangle(252, 122, 260, 130);
+                    let ballskin = 1;
+                    do Output.moveCursor(12, 47);
+                    do Output.printString("Hexa");
+
+                    do Screen.setColor(true);
+                    do Screen.drawCircle(256, 126, 4);
+                    do Screen.drawLine(258, 122, 260, 124);
+                    do Screen.drawLine(260, 128, 258, 130);
+                    do Screen.drawLine(254, 122, 252, 124);
+                    do Screen.drawLine(252, 128, 254, 130);
+                }
+                if(ballCounter = 2){
+                    do Screen.setColor(false);
+                    do Screen.drawCircle(256, 126, 4);
+                    let ballskin = 2;
+                    do Output.moveCursor(12, 46);
+                    do Output.printString("Square");
+
+                    do Screen.setColor(true);
+                    do Screen.drawRectangle(252, 122, 260, 130);
+                }
+            }
+
+            if((key = 68) | (key = 100)){
+                let difficultyCounter = difficultyCounter + 1;
+                do Screen.setColor(false);
+                do Screen.drawRectangle(221, 209, 289, 218);
+                do Screen.drawRectangle(490, 110, 505, 250);
+
+                if(difficultyCounter = 1){
+                    let difficulty = 1;
+                    let wtime = 4;
+                    do Output.moveCursor(19, 30);
+                    do Output.printString("Easy");
+
+                    do Output.moveCursor(12, 62);
+                    do Output.printString("E");
+                    do Output.moveCursor(14, 62);
+                    do Output.printString("A");
+                    do Output.moveCursor(16, 62);
+                    do Output.printString("S");
+                    do Output.moveCursor(18, 62);
+                    do Output.printString("Y");
+                }
+
+                if(difficultyCounter = 2){
+                    let difficulty = 2;
+                    let wtime = 4;
+                    do Output.moveCursor(19, 29);
+                    do Output.printString("Medium");
+
+                    do Output.moveCursor(11, 62);
+                    do Output.printString("M");
+                    do Output.moveCursor(13, 62);
+                    do Output.printString("E");
+                    do Output.moveCursor(15, 62);
+                    do Output.printString("D");
+                    do Output.moveCursor(17, 62);
+                    do Output.printString("I");
+                    do Output.moveCursor(19, 62);
+                    do Output.printString("U");
+                    do Output.moveCursor(21, 62);
+                    do Output.printString("M");
+                }
+
+                if(difficultyCounter = 3){
+                    let difficulty = 3;
+                    let wtime = 3;
+                    do Output.moveCursor(19, 30);
+                    do Output.printString("Hard");
+                    
+                    do Output.moveCursor(12, 62);
+                    do Output.printString("H");
+                    do Output.moveCursor(14, 62);
+                    do Output.printString("A");
+                    do Output.moveCursor(16, 62);
+                    do Output.printString("R");
+                    do Output.moveCursor(18, 62);
+                    do Output.printString("D");
+                }
+            }
+            
+            while(~(key = 0)) {
+                let key = Keyboard.keyPressed();
+            }
+            if(paddleCounter = 3) {let paddleCounter = 0;}
+            if(ballCounter = 2) {let ballCounter = 0;}
+            if(difficultyCounter = 3) {let difficultyCounter = 0;}
+
+        }
+
+
+        return;
+    }
+
+    method void run() {
+        var char key;
+        var boolean exit, pause, check, end, slow;
+        var int slow;
+        let slow = 1;
+        let exit = false;
+        let check = false;
+        let end = false;
+
+        while(~exit) {
+
+            let check = false;
+            let end = false;
+
+
+            while((key = 0) & ~(winner)) {
+                let key = Keyboard.keyPressed();
+                //do movePlayer(); tezi mode
+                
+                do moveComputer();
+                do moveBall();
+            }
+
+            
+            if ((key = 81) | winner) { 
+                if(ballskin = 1) { do ball.ereaseBall(); }
+                if(ballskin = 2) { do ball.ereaseSquare(); }
+                let exit = true; 
+            }
+            if (key = 130) { let direction = 1; }
+            if (key = 132) { let direction = 2; }
+            if ((key = 80) | (key = 112)) { let check = true; }
+            if (~(key = 130) | ~(key = 132)) { 
+                let key = Keyboard.keyPressed();
+            }
+
+            
+            while(~(key = 0)) {
+                let key = Keyboard.keyPressed();
+                if((key = 130) | (key = 132)){
+                    do movePlayer();
+                }
+                
+                do moveComputer();
+                do moveBall();
+            }
+
+
+            if(check) { do pause(); }
+        }
+
+        return;
+    }
+
+    method void pause() {
+
+        var char keyy;
+        var boolean exitt;
+        let exitt = false;
+
+        do Screen.setColor(false);
+        do Screen.drawRectangle(222, 120 , 262, 134);
+        do Output.moveCursor(11, 28);
+        do Output.printString("PAUSE");
+        
+        while(~exitt) {
+            
+            let keyy = Keyboard.keyPressed();
+            
+
+            if((keyy = 80) | (keyy = 112)){
+                let exitt = true;
+
+                do Screen.setColor(false);
+                do Screen.drawRectangle(220, 120, 262, 134);
+                
+            }
+
+            while(~(keyy = 0)) {
+                let keyy = Keyboard.keyPressed();
+            }
+
+        }
+        do run();
+
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method void end() {
+
+        var char key;
+        var boolean exit;
+        let exit = false;
+
+        
+        if(playerScore = 5) {
+            do Output.moveCursor(7, 23);
+            do Output.printString("YOU ARE THE WINNER!");
+        }
+        if(compScore = 5) {
+            do Output.moveCursor(7, 21);
+            do Output.printString("COMPUTER IS THE WINNER!");
+        }
+
+        do Output.moveCursor(12, 22);
+        do Output.printString("Press S to play again!");
+
+        do Screen.setColor(true);
+        do Screen.drawLine(243, 150, 283, 150);
+        do Screen.drawLine(243, 150, 238, 155);
+        do Screen.drawLine(283, 150, 288, 155);
+        do Screen.drawLine(238, 155, 238, 175);
+        do Screen.drawLine(288, 155, 288, 175);
+        do Screen.drawLine(238, 175, 243, 180);
+        do Screen.drawLine(288, 175, 283, 180);
+        do Screen.drawLine(243, 180, 283, 180);
+
+        do Screen.drawLine(243, 151, 283, 151);
+        do Screen.drawLine(243, 151, 239, 155);
+        do Screen.drawLine(283, 151, 287, 155);
+        do Screen.drawLine(239, 155, 239, 175);
+        do Screen.drawLine(287, 155, 287, 175);
+        do Screen.drawLine(239, 175, 243, 179);
+        do Screen.drawLine(287, 175, 283, 179);
+        do Screen.drawLine(243, 179, 283, 179);
+
+        do Screen.drawLine(254, 157, 254, 173);
+        do Screen.drawLine(254, 157, 274, 165);
+        do Screen.drawLine(254, 173, 274, 165);
+        do Screen.drawLine(255, 158, 255, 172);
+        do Screen.drawLine(255, 158, 273, 165);
+        do Screen.drawLine(255, 172, 273, 165);
+
+        
+        
+        while(~exit) {
+            
+            let key = Keyboard.keyPressed();
+            
+
+            if((key = 83) | (key = 115)){
+                let exit = true;
+
+                do Screen.setColor(false);
+                do Screen.drawRectangle(150, 75, 350, 95);
+                do Screen.drawRectangle(150, 123, 350, 143);
+
+                do Screen.drawLine(243, 150, 283, 150);
+                do Screen.drawLine(243, 150, 238, 155);
+                do Screen.drawLine(283, 150, 288, 155);
+                do Screen.drawLine(238, 155, 238, 175);
+                do Screen.drawLine(288, 155, 288, 175);
+                do Screen.drawLine(238, 175, 243, 180);
+                do Screen.drawLine(288, 175, 283, 180);
+                do Screen.drawLine(243, 180, 283, 180);
+        
+                do Screen.drawLine(243, 151, 283, 151);
+                do Screen.drawLine(243, 151, 239, 155);
+                do Screen.drawLine(283, 151, 287, 155);
+                do Screen.drawLine(239, 155, 239, 175);
+                do Screen.drawLine(287, 155, 287, 175);
+                do Screen.drawLine(239, 175, 243, 179);
+                do Screen.drawLine(287, 175, 283, 179);
+                do Screen.drawLine(243, 179, 283, 179);
+        
+                do Screen.drawLine(254, 157, 254, 173);
+                do Screen.drawLine(254, 157, 274, 165);
+                do Screen.drawLine(254, 173, 274, 165);
+                do Screen.drawLine(255, 158, 255, 172);
+                do Screen.drawLine(255, 158, 273, 165);
+                do Screen.drawLine(255, 172, 273, 165);
+
+                do Screen.setColor(false);
+                do Screen.drawRectangle(221, 209, 289, 218);
+                do Screen.drawRectangle(490, 110, 505, 250);
+                
+
+                if(ballskin = 1){ do ball.ereaseBall(); }
+                if(ballskin = 2){ do ball.ereaseSquare(); }
+                do player.erease();
+                do computer.erease();
+            }
+
+            while(~(key = 0)) {
+                let key = Keyboard.keyPressed();
+            }
+
+        }
+
+        return;
+    }
+}
+    

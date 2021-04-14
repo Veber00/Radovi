@@ -1,0 +1,268 @@
+class Ball {
+
+    field int x, y;
+    field int size, dx, dy;
+
+    constructor Ball new(int Ax, int Ay, int Asize) {
+        let x = Ax;
+        let y = Ay;
+        let size = Asize;
+        let dx = -1;
+        let dy = -1;
+        do draw();
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method void draw() {
+        do Screen.setColor(true);
+        do Screen.drawCircle(256, 126, 4);
+        do Screen.drawLine(258, 122, 260, 124);
+        do Screen.drawLine(260, 128, 258, 130);
+        do Screen.drawLine(254, 122, 252, 124);
+        do Screen.drawLine(252, 128, 254, 130);
+        return;
+    }
+
+    method void ereaseBall() {
+        do Screen.setColor(false);
+        do Screen.drawCircle(x, y, 5);
+        return;
+    }
+
+    method void ereaseSquare() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle((x - 4), (y - 4 ), (x + 4), (y + 4));
+        return;
+    }
+
+    method int getx() {
+        return x;
+    }
+
+    method int gety() {
+        return y;
+    }
+
+    method void setx(int Ax) {
+        let x = Ax;
+        return;
+    }
+
+    method void sety(int Ay) {
+        let y = Ay;
+        return;
+    }
+
+    method int getsize() {
+        return size;
+    }
+
+    method int getdx() {
+        return dx;
+    }
+
+    method int getdy() {
+        return dy;
+    }
+
+    method void setdx(int Adx) {
+        let dx = Adx;
+        return;
+    }
+
+    method void setdy(int Ady) {
+        let dy = Ady;
+        return;
+    }
+
+    method void moveBallRD() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 2, y - 5, x - 5, y - 2);
+        do Screen.drawLine(x - 2, y - 5, x + 2, y - 5);
+        do Screen.drawLine(x - 1, y - 5, x - 4, y - 2);
+        do Screen.drawLine(x - 5, y - 2, x - 5, y + 2);
+        
+        let x = x + dx;
+        let y = y + dy;
+
+        do Screen.setColor(true);
+        do Screen.drawLine(x + 5, y - 2, x + 5, y + 2);
+        do Screen.drawLine(x + 4, y + 2, x + 2, y + 5);
+        do Screen.drawLine(x + 5, y + 2, x + 2, y + 4);
+        do Screen.drawLine(x - 2, y + 5, x + 2, y + 5);
+        
+        return;
+    }
+
+    method void moveBallRU() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 5, y - 2, x - 5, y + 2);
+        do Screen.drawLine(x - 5, y + 2, x - 2, y + 5);
+        do Screen.drawLine(x - 4, y + 2, x - 2, y + 4);
+        do Screen.drawLine(x + 2, y + 5, x - 2, y + 5);
+
+        let x = x + dx;
+        let y = y + dy;
+
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 2, y - 5, x + 2, y - 5);
+        do Screen.drawLine(x + 2, y - 5, x + 5, y - 2);
+        do Screen.drawLine(x + 2, y - 4, x + 4, y - 2);
+        do Screen.drawLine(x + 5, y - 2, x + 5, y + 2);
+
+        return;
+    }
+
+    method void moveBallLD() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 2, y - 5, x + 2, y - 5);
+        do Screen.drawLine(x + 2, y - 5, x + 5, y - 2);
+        do Screen.drawLine(x + 2, y - 4, x + 4, y - 2);
+        do Screen.drawLine(x + 5, y - 2, x + 5, y + 2);
+
+        let x = x + dx;
+        let y = y + dy;
+
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 5, y - 2, x - 5, y + 2);
+        do Screen.drawLine(x - 5, y + 2, x - 2, y + 5);
+        do Screen.drawLine(x - 4, y + 2, x - 2, y + 4);
+        do Screen.drawLine(x + 2, y + 5, x - 2, y + 5);
+
+        return;
+    }
+
+    method void moveBallLU() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x + 5, y - 2, x + 5, y + 2);
+        do Screen.drawLine(x + 4, y + 2, x + 2, y + 5);
+        do Screen.drawLine(x + 5, y + 2, x + 2, y + 4);
+        do Screen.drawLine(x - 2, y + 5, x + 2, y + 5);
+
+        let x = x + dx;
+        let y = y + dy;
+
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 2, y - 5, x - 5, y - 2);
+        do Screen.drawLine(x - 2, y - 5, x + 2, y - 5);
+        do Screen.drawLine(x - 1, y - 5, x - 4, y - 2);
+        do Screen.drawLine(x - 5, y - 2, x - 5, y + 2);
+
+        return;
+    }
+
+    method void moveBallD() {
+
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 2, y - 5, x + 2, y - 5);
+        do Screen.drawLine(x - 5, y - 2, x - 2, y - 5);
+        do Screen.drawLine(x + 2, y - 5, x + 5, y - 2);
+
+        let x = x + dx;
+        let y = y + dy;
+
+        do Screen.setColor(true);
+        do Screen.drawLine(x + 2, y + 5, x - 2, y + 5);
+        do Screen.drawLine(x + 2, y + 5, x + 5, y + 2);
+        do Screen.drawLine(x - 5, y + 2, x - 2, y + 5);
+
+        return;
+    }
+
+    method void moveBallU() {
+
+        do Screen.setColor(false);
+        do Screen.drawLine(x + 2, y + 5, x - 2, y + 5);
+        do Screen.drawLine(x + 2, y + 5, x + 5, y + 2);
+        do Screen.drawLine(x - 5, y + 2, x - 2, y + 5);
+
+        let x = x + dx;
+        let y = y + dy;
+
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 2, y - 5, x + 2, y - 5);
+        do Screen.drawLine(x - 5, y - 2, x - 2, y - 5);
+        do Screen.drawLine(x + 2, y - 5, x + 5, y - 2);
+
+        return;
+    }
+
+    method void moveSquareRD() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 4, y - 4, x + 5, y - 4);
+        do Screen.drawLine(x - 4, y - 4, x - 4, y + 4);
+        let x = x + dx;
+        let y = y + dy;
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 4, y + 4, x + 4, y + 4);
+        do Screen.drawLine(x + 4, y - 4, x + 4, y + 4);
+
+        return;
+    }
+
+    method void moveSquareRU() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 4, y - 4, x - 4, y + 4);
+        do Screen.drawLine(x - 4, y + 4, x + 4, y + 4);
+        let x = x + dx;
+        let y = y + dy;
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 4, y - 4, x + 4, y - 4);
+        do Screen.drawLine(x + 4, y - 4, x + 4, y + 4);
+
+        return;
+    }
+
+    method void moveSquareLD() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 4, y - 4, x + 4, y - 4);
+        do Screen.drawLine(x + 4, y - 4, x + 4, y + 4);
+        let x = x + dx;
+        let y = y + dy;
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 4, y - 4, x - 4, y + 4);
+        do Screen.drawLine(x - 4, y + 4, x + 4, y + 4);
+        
+        return;
+    }
+
+    method void moveSquareLU(){
+        do Screen.setColor(false);
+        do Screen.drawLine(x + 4, y - 4, x + 4, y + 4);
+        do Screen.drawLine(x - 4, y + 4, x + 4, y + 4);
+        let x = x + dx;
+        let y = y + dy;
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 4, y - 4, x + 4, y - 4);
+        do Screen.drawLine(x - 4, y - 4, x - 4, y + 4);
+
+        return;
+    }
+
+    method void moveSquareD() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 4, y - 4, x + 4, y - 4);
+        let x = x + dx;
+        let y = y + dy;
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 4, y + 4, x + 4, y + 4);
+
+        return;
+    }
+
+    method void moveSquareU() {
+        do Screen.setColor(false);
+        do Screen.drawLine(x - 4, y + 4, x + 4, y + 4);
+        let x = x + dx;
+        let y = y + dy;
+        do Screen.setColor(true);
+        do Screen.drawLine(x - 4, y - 4, x + 4, y - 4);
+
+        return;
+    }
+}

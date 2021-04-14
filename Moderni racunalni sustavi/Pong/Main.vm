@@ -1,0 +1,24 @@
+function Main.main 1
+label WHILE_EXP0
+push constant 0
+not
+not
+if-goto WHILE_END0
+call PongGame.new 0
+pop local 0
+push local 0
+call PongGame.start 1
+pop temp 0
+push local 0
+call PongGame.run 1
+pop temp 0
+push local 0
+call PongGame.end 1
+pop temp 0
+push local 0
+call PongGame.dispose 1
+pop temp 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
